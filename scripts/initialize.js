@@ -1,4 +1,6 @@
 //"main()" function
+
+
 window.onload = function(){
 	//initializeing the values of global variables
 	gbCanvas = document.getElementById('mainCanvas');
