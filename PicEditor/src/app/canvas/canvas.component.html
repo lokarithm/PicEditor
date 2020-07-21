@@ -1,0 +1,19 @@
+<canvas #canvas [width]="width" [height]="height"></canvas>
+<h4>Meta info:</h4>
+<p>
+  <label>Canvas width:</label>
+  {{ canvas.offsetWidth - 2 }}
+</p>
+<p>
+  <label>Canvas height:</label>
+  {{ canvas.offsetHeight - 2 }}
+</p>
+<p>{{ bodyText }}</p>
+
+<button (click)="openModal('custom-modal-1')">Open Modal 1</button>
+
+<popup-modal id="custom-modal-1">
+  <h1>A Custom Modal!</h1>
+  <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p>
+  <button (click)="closeModal('custom-modal-1')">Close</button>
+</popup-modal>
