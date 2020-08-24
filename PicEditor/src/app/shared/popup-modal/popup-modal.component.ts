@@ -41,7 +41,6 @@ export class PopupModalComponent implements OnInit {
   }
 
   open(): void {
-    console.log("open seasame", this.element);
     this.element.style.display = "block";
     document.body.classList.add("modal-open");
     document.body.classList.add("active");
