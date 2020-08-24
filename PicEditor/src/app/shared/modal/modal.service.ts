@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 @Injectable({ providedIn: "root" })
-export class PopupModalService {
+export class ModalService {
   private modals: any[] = [];
 
   add(modal: any) {
