@@ -1,19 +1,64 @@
-<canvas #canvas [width]="width" [height]="height"></canvas>
+<div class="canvas-tools">
+  <ul>
+    <li>
+      <i class="fa fa-american-sign-language-interpreting" aria-hidden="true">
+      </i>
+    </li>
+    <li><i class="fa fa-pencil-alt"></i></li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+</div>
+<div class="canvas-container">
+  <canvas #canvas [width]="width" [height]="height"></canvas>
+</div>
+
 <h4>Meta info:</h4>
-<p>
-  <label>Canvas width:</label>
-  {{ canvas.offsetWidth - 2 }}
-</p>
-<p>
-  <label>Canvas height:</label>
-  {{ canvas.offsetHeight - 2 }}
-</p>
-<p>{{ bodyText }}</p>
-
-<button (click)="openModal('custom-modal-1')">Open Modal 1</button>
-
+<div class="canvas-config">
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Canvas width</mat-label>
+      <input matInput type="number" [(ngModel)]="width" />
+    </mat-form-field>
+    <mat-slider
+      thumbLabel
+      min="1"
+      max="600"
+      [displayWith]="formatLabel"
+      tickInterval="1"
+      [(ngModel)]="width"
+    ></mat-slider>
+  </div>
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Canvas height</mat-label>
+      <input matInput type="number" [(ngModel)]="height" />
+    </mat-form-field>
+    <mat-slider
+      thumbLabel
+      min="1"
+      max="400"
+      [displayWith]="formatLabel"
+      tickInterval="1"
+      [(ngModel)]="height"
+    ></mat-slider>
+  </div>
+</div>
+{{ this.mousePosX }},{{ this.mousePosY }}
+<!-- <button (click)="openModal('custom-modal-1')">Open Modal 1</button> -->
+<button (click)="usePencil()">Pencil</button>
+<button (click)="reset()">Reset</button>
+<!--
 <popup-modal id="custom-modal-1">
   <h1>A Custom Modal!</h1>
   <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p>
   <button (click)="closeModal('custom-modal-1')">Close</button>
-</popup-modal>
+</popup-modal> -->
+
+<app-modal></app-modal>
