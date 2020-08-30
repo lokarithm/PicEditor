@@ -1,7 +1,7 @@
 <div class="canvas-tools">
   <ul>
     <li><i class="fas fa-mouse-pointer fa-2x"></i></li>
-    <li><i class="fas fa-pencil-alt fa-2x"></i></li>
+    <li (click)="usePencil()"><i class="fas fa-pencil-alt fa-2x"></i></li>
     <li><i class="fas fa-eraser fa-2x"></i></li>
     <li><i class="far fa-square fa-2x"></i></li>
     <li><i class="far fa-circle fa-2x"></i></li>
@@ -16,7 +16,7 @@
   <canvas #canvas [width]="width" [height]="height"></canvas>
 </div>
 
-<h4>Meta info:</h4>
+<h4>Meta info: mouse position:{{ this.mousePosX }},{{ this.mousePosY }}</h4>
 <div class="canvas-config">
   <div class="row">
     <mat-form-field>
@@ -47,9 +47,7 @@
     ></mat-slider>
   </div>
 </div>
-{{ this.mousePosX }},{{ this.mousePosY }}
 <!-- <button (click)="openModal('custom-modal-1')">Open Modal 1</button> -->
-<button (click)="usePencil()">Pencil</button>
 <button (click)="reset()">Reset</button>
 <!--
 <popup-modal id="custom-modal-1">

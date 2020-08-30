@@ -72,6 +72,7 @@ export class CanvasComponent implements AfterViewInit, OnDestroy {
   }
 
   usePencil() {
+    console.log("event", this);
     this.captureRawPencilEvents(this.canvasEl);
     this.canvas.nativeElement.classList.add("pencil");
   }
