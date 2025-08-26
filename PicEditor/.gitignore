@@ -7,6 +7,9 @@
 # Only exists if Bazel was run
 /bazel-out
 
+# Angular CLI cache
+/.angular
+
 # dependencies
 /node_modules
 
@@ -43,4 +46,5 @@ testem.log
 
 # System Files
 .DS_Store
+**/.DS_Store
 Thumbs.db

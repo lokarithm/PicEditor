@@ -1,4 +1,4 @@
-import { element } from "protractor";
+
 import { Rectangle } from "./../shapes/rectangle/rectangle.model";
 import {
   Component,
@@ -11,11 +11,18 @@ import {
 import { fromEvent, Subscription } from "rxjs";
 import { switchMap, takeUntil, pairwise } from "rxjs/operators";
 import { PopupModalService } from "../shared/popup-modal/popup-modal.service";
+import { FormsModule } from "@angular/forms";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { ModalComponent } from "../shared/modal/modal.component";
 
 @Component({
   selector: "app-canvas",
   templateUrl: "canvas.component.html",
   styleUrls: ["./canvas.component.less"],
+  standalone: true,
+  imports: [FormsModule, MatSliderModule, MatInputModule, MatFormFieldModule, ModalComponent],
 })
 export class CanvasComponent implements AfterViewInit, OnDestroy {
   @ViewChild("canvas") public canvas: ElementRef;
