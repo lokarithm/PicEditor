@@ -5,6 +5,8 @@ import { PopupModalService } from "./popup-modal.service";
   selector: "popup-modal",
   templateUrl: "./popup-modal.component.html",
   styleUrls: ["./popup-modal.component.less"],
+  standalone: true,
+  imports: []
 })
 export class PopupModalComponent implements OnInit {
   @Input() id: string;

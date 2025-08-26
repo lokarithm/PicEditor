@@ -60,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "PicEditor:build"
+            "buildTarget": "PicEditor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "PicEditor:build:production"
+              "buildTarget": "PicEditor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PicEditor:build"
+            "buildTarget": "PicEditor:build"
           }
         },
         "test": {
@@ -115,5 +115,7 @@
       }
     }
   },
-  "defaultProject": "PicEditor"
+  "cli": {
+    "analytics": "22c89283-9b97-46c4-b348-ebffa4b8b9c3"
+  }
 }
